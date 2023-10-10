@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+    
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #searchInput{
+            /* text-align: center; */
+           margin-left: 30%;
+            width: 500px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <input  onkeyup="searchfun()" type="text" id="searchInput" placeholder="Search for a product...">
+
+    <h2>Product Catalog</h2>
+
+<table id="mytable">
+    <tr class="header">
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>In Stock</th>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>Smartphone</td>
+        <td>$599.99</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>102</td>
+        <td>Laptop</td>
+        <td>$999.99</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>103</td>
+        <td>Tablet</td>
+        <td>$349.99</td>
+        <td>No</td>
+    </tr>
+    <tr>
+        <td>104</td>
+        <td>washing machine</td>
+        <td>$329.99</td>
+        <td>No</td>
+    </tr>
+    <tr>
+        <td>105</td>
+        <td>charger</td>
+        <td>$49.99</td>
+        <td>No</td>
+    </tr>
+    <tr>
+        <td>106</td>
+        <td>powerbank</td>
+        <td>$44.99</td>
+        <td>No</td>
+    </tr>
+    <tr>
+        <td>107</td>
+        <td>car</td>
+        <td>$3449.99</td>
+        <td>No</td>
+    </tr>
+ 
+</table>
+  
+<script src="basic.js"></script>
+</body>
+</html>

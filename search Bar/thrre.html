@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List with Search Filter</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Product Catalog</h2>
+
+<input type="text" id="searchInput" placeholder="Search for a product...">
+
+<table id="productTable">
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>In Stock</th>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>Smartphone</td>
+        <td>$599.99</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>102</td>
+        <td>Laptop</td>
+        <td>$999.99</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>103</td>
+        <td>Tablet</td>
+        <td>$349.99</td>
+        <td>No</td>
+    </tr>
+    <!-- Add more rows here -->
+</table>
+
+<script>
+    const searchInput = document.getElementById("searchInput");
+    const productTable = document.getElementById("productTable");
+
+    searchInput.addEventListener("input", function() {
+        const filter = searchInput.value.toLowerCase();
+        const rows = productTable.getElementsByTagName("tr");
+
+        for (let i = 1; i < rows.length; i++) {
+            const productName = rows[i].getElementsByTagName("td")[1];
+
+            if (productName) {
+                const productNameText = productName.textContent || productName.innerText;
+                if (productNameText.toLowerCase().indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
